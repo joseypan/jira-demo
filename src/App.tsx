@@ -10,7 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <p>搭建环境成功测试一下</p>
+        <p>搭建环境成功测试一下试试123</p>
         <a
           className="App-link"
           href="https://reactjs.org"
