@@ -1,25 +1,11 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-
+import { ProjectListScreen } from "./views/project-list/index";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>搭建环境成功测试一下试试123,不规则人试试</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProjectListScreen></ProjectListScreen>
     </div>
   );
 }
