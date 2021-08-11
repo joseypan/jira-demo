@@ -1,4 +1,5 @@
-export const isFalsy = (value: any) => (value === 0 ? false : !value);
+export const isFalsy = (value: unknown): boolean =>
+  value === 0 ? false : !value;
 export const cleanObject = (object: any) => {
   const result = { ...object };
   Object.keys(result).forEach((key) => {
