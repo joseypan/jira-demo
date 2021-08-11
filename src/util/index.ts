@@ -1,11 +1,12 @@
 export const isFalsy = (value: unknown): boolean =>
   value === 0 ? false : !value;
-export const cleanObject = (object: any) => {
-  const result = { ...object };
+export const cleanObject = (object: object) => {
+  let result = { ...object };
   Object.keys(result).forEach((key) => {
-    const value = result[key];
+    console.log("key", key);
+    const value = result[key as keyof object];
     if (isFalsy(value)) {
-      delete result[key];
+      delete result[key as keyof object];
     }
   });
   return result;
