@@ -6,7 +6,6 @@ import { cleanObject } from "../../util";
 import { useMount } from "../../hook/useMount";
 import { useDebounce } from "../../hook/useDebounce";
 import { useHttp } from "../../util/http";
-const apiUrl = process.env.REACT_APP_API_URL;
 
 export const ProjectListScreen = () => {
   const [param, setParam] = useState({

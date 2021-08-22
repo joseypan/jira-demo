@@ -1,4 +1,5 @@
 import { Role } from "./search-panel";
+import { Table } from "antd";
 interface Project {
   id: string;
   name: string;
@@ -12,26 +13,27 @@ interface ListProps {
 }
 export const List = ({ list, roles }: ListProps) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>名称</th>
-          <th>负责人</th>
-        </tr>
-      </thead>
-      <tbody>
-        {list.map((item) => {
-          return (
-            <tr key={item.id}>
-              <td>{item.name}</td>
-              <td>
-                {roles.find((user) => user.id === item.personId)?.name ||
+    <Table
+      pagination={false}
+      columns={[
+        {
+          title: "名称",
+          dataIndex: "name",
+          sorter: (a, b) => a.name.localeCompare(b.name),
+        },
+        {
+          title: "负责人",
+          render(value, project) {
+            return (
+              <span>
+                {roles.find((user) => user.id === project.personId)?.name ||
                   "未知"}
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+              </span>
+            );
+          },
+        },
+      ]}
+      dataSource={list}
+    />
   );
 };
