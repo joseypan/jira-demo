@@ -18,10 +18,11 @@ interface SearchPanelProps {
 }
 export const SearchPanel = ({ param, setParam, roles }: SearchPanelProps) => {
   return (
-    <Form>
-      <div>
+    <Form layout={"inline"}>
+      <Form.Item>
         <Input
           type="text"
+          placeholder="项目名"
           value={param.name}
           onChange={(e) => {
             setParam({
@@ -30,6 +31,8 @@ export const SearchPanel = ({ param, setParam, roles }: SearchPanelProps) => {
             });
           }}
         />
+      </Form.Item>
+      <Form.Item>
         <Select
           value={param.personId}
           onChange={(value) => {
@@ -46,7 +49,7 @@ export const SearchPanel = ({ param, setParam, roles }: SearchPanelProps) => {
             </Select.Option>
           ))}
         </Select>
-      </div>
+      </Form.Item>
     </Form>
   );
 };
